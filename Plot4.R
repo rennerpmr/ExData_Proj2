@@ -22,6 +22,7 @@ Coalindex <- grep("coal", SCC$EI.Sector, ignore.case = TRUE) # vector of rows wi
 SCC2 <- SCC[,c(1,4)] # reduces SCC to only SCC and one column with fuel source
 SCCCoal <- SCC2[Coalindex,] #subsets SCC2 to only those rows with "coal" in EI.sector
 emission2 <- merge(emission, SCCCoal, by ="SCC") #creates emission table for coal sources
+emission2$yearfactor <- as.factor(emission2$year)
 
 #create plot of Total PM25 Emissions as Plot4.png
 options(scipen = 99)

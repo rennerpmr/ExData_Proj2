@@ -25,7 +25,7 @@ Baltosum <- Balto %>%
        summarise(Emissions = mean(Emissions))
 Baltosum$year2 <- as.factor(Baltosum$year)
 
-#create plot of Total PM25 Emissions as Plot1.png
+#create plot of Total PM25 Emissions as Plot3.png
 png(filename = "Plot3.png", width = 480, height = 480, units = "px")
 g <- ggplot(Baltosum, aes(x= year2, y = Emissions))
 g + geom_col() + facet_grid(. ~ type)

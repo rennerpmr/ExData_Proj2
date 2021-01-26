@@ -20,7 +20,7 @@ Balto <- emission[which(emission$fips == "24510"),]
 #power1$newtime <- paste(power1$Date, power1$Time)
 #power1$newtime <- strptime(power1$newtime, format ="%m/%d/%Y %H:%M:%S")
 
-#create histogram of Total PM25 Emissions as Plot1.png
+#create barplot of Total PM25 Emissions as Plot2.png
 png(filename = "Plot2.png", width = 480, height = 480, units = "px")
 barplot(tapply(Balto$Emissions, Balto$year, FUN=sum), main = "Total PM25 Emissions, Baltimore")
 dev.off()
